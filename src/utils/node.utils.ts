@@ -60,6 +60,12 @@ export const formatCurrency = (value: number): string =>
 export const formatDate = (iso: string): string =>
   new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).format(new Date(iso))
 
+export const strengthToOpacity = (strength: string): number => {
+  if (strength === 'strong') return 0.9
+  if (strength === 'moderate') return 0.55
+  return 0.25
+}
+
 export const timeAgo = (iso: string): string => {
   const diff = Date.now() - new Date(iso).getTime()
   const mins = Math.floor(diff / 60000)

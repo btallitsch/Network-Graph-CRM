@@ -158,7 +158,7 @@ export const GraphPage = () => {
       <AddEdgeModal
         open={showAddEdge}
         onClose={() => { setShowAddEdge(false); setConnectTarget(null) }}
-        onSubmit={addEdge}
+        onSubmit={async (data) => { await addEdge(data) }}
         nodes={nodes}
         preSelectedSource={connectSourceId}
         preSelectedTarget={connectTarget}
